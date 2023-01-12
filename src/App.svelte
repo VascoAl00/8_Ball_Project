@@ -78,7 +78,11 @@
     </div>
 
     <div>
-      <button id="button" on:click={turnClicked}>Pergunta!</button>
+      <button id="button" on:click={turnClicked}>
+        {#if clicked && question == tempval} Pergunta de novo!
+        {:else if !clicked} Pergunta! 
+        {/if}
+      </button>
     </div>
 
     {#if question != null && question != "" && clicked && question == tempval}
